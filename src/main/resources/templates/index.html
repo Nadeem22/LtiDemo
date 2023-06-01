@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <h1>Student Form</h1>
+    <div th:if="${message != null}" th:text="${message}"></div>
+    <form th:action="@{/saveStudent}" th:object="${student}" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" th:field="*{name}" name="name"><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" th:field="*{email}" name="email"><br>
+        <input type="submit" value="Submit">
+    </form> 
+</body>
+</html>
